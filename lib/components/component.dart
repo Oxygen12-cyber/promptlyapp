@@ -45,6 +45,11 @@ class PostBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      focusColor: Colors.transparent,
+      overlayColor: const WidgetStatePropertyAll(Colors.transparent),
+
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         margin: const EdgeInsets.symmetric(vertical: 6),
@@ -71,8 +76,8 @@ class PostBox extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
               children: [
+                // avatar & username
                 Column(
                   spacing: 20,
                   mainAxisSize: MainAxisSize.min,
@@ -100,37 +105,10 @@ class PostBox extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0, left: 10),
-                      child: Expanded(
-                        child: RichText(
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: title,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              TextSpan(
-                                text: '\n$subtitle',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
+
+                // llm & likes count
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -142,6 +120,7 @@ class PostBox extends StatelessWidget {
                         borderRadius: BorderRadius.circular(24),
                       ),
                       label: Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
                             'gpt-5',
@@ -204,6 +183,38 @@ class PostBox extends StatelessWidget {
                       ],
                     ),
                   ],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: RichText(
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: title,
+                          style: GoogleFonts.poppins(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '\n$subtitle',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),

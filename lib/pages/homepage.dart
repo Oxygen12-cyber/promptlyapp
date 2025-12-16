@@ -114,6 +114,21 @@ class _HomePageState extends ConsumerState<HomePage> {
           ),
         ],
       ),
+      floatingActionButton: Transform.scale(
+        scale: 1.2,
+        child: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, '/newPostPage'),
+          backgroundColor: Colors.white,
+          tooltip: 'Create new post',
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(Iconsax.magicpen),
+          ),
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -164,15 +179,18 @@ class _HomePageState extends ConsumerState<HomePage> {
           SizedBox(height: context.hp(2)),
           Expanded(
             child: RefreshIndicator(
+              backgroundColor: Colors.white,
+              color: Colors.black,
               onRefresh: () async {
                 // Add your refresh logic here
                 await Future.delayed(const Duration(seconds: 1));
                 fetchAllPosts();
               },
               child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(
-                  context,
-                ).copyWith(scrollbars: false),
+                behavior: ScrollConfiguration.of(context).copyWith(
+                  scrollbars: false,
+                  physics: const BouncingScrollPhysics(),
+                ),
                 child: ListView.builder(
                   itemCount: allPosts.length,
                   itemBuilder: (context, index) {

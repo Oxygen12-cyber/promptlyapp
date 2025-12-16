@@ -63,33 +63,36 @@ class _HomePageState extends ConsumerState<PostPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisSize: MainAxisSize.min,
                 children: [
-                  RichText(
-                    text: TextSpan(
-                      text: widget.postTitle,
-                      style: GoogleFonts.ubuntuSans(
-                        fontSize: 23,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                  Expanded(
+                    child: RichText(
+                      text: TextSpan(
+                        text: widget.postTitle,
+                        style: GoogleFonts.ubuntuSans(
+                          fontSize: 23,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: '\n${widget.postTag}',
+                            style: GoogleFonts.ubuntuSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '\n@${widget.username}',
+                            style: GoogleFonts.ubuntuSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ],
                       ),
-                      children: [
-                        TextSpan(
-                          text: '\n${widget.postTag}',
-                          style: GoogleFonts.ubuntuSans(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        TextSpan(
-                          text: '\n@${widget.username}',
-                          style: GoogleFonts.ubuntuSans(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                   Column(
@@ -173,7 +176,7 @@ class _HomePageState extends ConsumerState<PostPage> {
                   height: context.hp(40),
                   width: context.wp(100),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
+                    color: Colors.grey.shade100,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Column(
@@ -182,7 +185,7 @@ class _HomePageState extends ConsumerState<PostPage> {
                         flex: 1,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
+                            color: Colors.grey.shade200,
                             border: const Border(
                               bottom: BorderSide(
                                 color: Colors.black54,
@@ -297,6 +300,8 @@ class _HomePageState extends ConsumerState<PostPage> {
                     children: [
                       Text(
                         widget.postDescription ?? 'No description available',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,

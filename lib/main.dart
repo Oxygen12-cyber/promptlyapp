@@ -1,5 +1,6 @@
 import 'package:aipromptapp/pages/homepage.dart';
 import 'package:aipromptapp/pages/loginpage.dart';
+import 'package:aipromptapp/pages/newpostpage.dart';
 import 'package:aipromptapp/pages/profilepage.dart';
 import 'package:aipromptapp/pages/signuppage.dart';
 import 'package:device_preview/device_preview.dart';
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
         "/profilePage": (context) => const ProfilePage(),
         "/loginPage": (context) => const LoginPage(),
         "/signupPage": (context) => const SignupPage(),
+        "/newPostPage": (context) => const NewPostPage(),
+
       },
     );
   }

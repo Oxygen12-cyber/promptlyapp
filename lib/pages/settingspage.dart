@@ -1,8 +1,6 @@
-import 'package:aipromptapp/api/apiservice.dart';
+
 import 'package:flutter/material.dart';
 
-final apiservice = ApiService();
-final post = apiservice.getAllPosts();
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

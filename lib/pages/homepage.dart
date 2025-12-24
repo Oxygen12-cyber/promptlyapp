@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:aipromptapp/api/apimodel.dart';
+import 'package:aipromptapp/api/apiservice.dart';
 import 'package:aipromptapp/components/component.dart';
 import 'package:aipromptapp/extensions/extension.dart';
 import 'package:aipromptapp/models/modellist.dart';
@@ -24,9 +25,11 @@ class _HomePageState extends ConsumerState<HomePage> {
   final SearchController searchController = SearchController();
 
   final List<PostModel> allPosts = [];
+  final apiService = ApiService();
 
   Future fetchAllPosts() async {
     final baseUrl = 'https://promptly-06c3.onrender.com/api/v1';
+    // final baseUrl = 'http://127.0.0.1:8000/api/v1';
 
     final url = Uri.parse('$baseUrl/posts');
 
@@ -49,6 +52,13 @@ class _HomePageState extends ConsumerState<HomePage> {
       throw 'error: $response.statusCode';
     }
   }
+
+  // getUserById(int id) async {
+  //   final user = await apiService.getUserwithId(id);
+
+  //   final userid = user.username;
+  //   return userid;
+  // }
 
   @override
   void initState() {
@@ -196,6 +206,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                   itemBuilder: (context, index) {
                     final post = allPosts[index];
 
+                    final userName = apiService;
+
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: PostBox(
@@ -221,7 +233,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                         },
                         title: post.title,
                         subtitle: post.title,
-                        username: '@ ${post.user_id.toString()}',
+                        username: '@ ${post.user_id}',
                         post: post.body,
                         likes: post.likes.toString(),
                       ),

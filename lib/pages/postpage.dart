@@ -6,27 +6,27 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class PostPage extends ConsumerStatefulWidget {
-  final String? postTitle;
-  final String? postDescription;
-  final String? likes;
-  final String? views;
-  final String? username;
-  final String? postBody;
-  final String? postTag;
-  final String? llmModel;
-  final String? createdDate;
+  final String postTitle;
+  final String postDescription;
+  final String likes;
+  final String views;
+  final String username;
+  final String postBody;
+  final String postTag;
+  final String llmModel;
+  final String createdDate;
 
   const PostPage({
     super.key,
-    this.postTitle,
-    this.postDescription,
-    this.likes,
-    this.views,
-    this.username,
-    this.postBody,
-    this.postTag,
-    this.llmModel,
-    this.createdDate,
+    required this.postTitle,
+    required this.postDescription,
+    required this.likes,
+    required this.views,
+    required this.username,
+    required this.postBody,
+    required this.postTag,
+    required this.llmModel,
+    required this.createdDate,
   });
 
   @override

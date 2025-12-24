@@ -1,4 +1,3 @@
-import 'package:http/http.dart';
 
 class PostModel {
   final String title;
@@ -65,6 +64,8 @@ class UserModel {
     this.id,
     this.createdAt,
   });
+
+  // UserModel copyWith({})
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(

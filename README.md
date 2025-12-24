@@ -1,16 +1,47 @@
-# aipromptapp
+# Promptly - AI Prompt Forum
 
-A new Flutter project.
+Promptly is a specialized social platform for AI enthusiasts to share, discover, and discuss prompts for various Large Language Models (LLMs) and Image Generators. Built with Flutter, it fills the gap for a dedicated "Twitter-like" forum tailored specifically for the prompt engineering community.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+- **Interactive Feed**: A scrollable, dynamic home feed to discover trending and new prompts.
+- **Detailed Posts**: Deep dive into specific prompts with dedicated post views including "Open with" model options.
+- **Secure Authentication**: Full Login and Signup flow for user account management.
+- **Visual Richness**: Implemented with a modern aesthetic, using custom typography (Google Fonts) and iconography (Iconsax).
+- **Prompt Creation**: Tools to compose and share new prompts with the community.
+- **Profile System**: Dedicated user profiles to track shared content.
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Core**: Flutter & Dart
+- **State Management**: [Riverpod](https://riverpod.dev/)
+- **Networking**: Dio
+- **UI Resources**: 
+  - `google_fonts` for typography
+  - `iconsax_flutter` for premium icons
+  - `device_preview` for responsive layout testing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Getting Started
+
+To run this application locally on your machine:
+
+1. **Prerequisites**: Ensure you have the Flutter SDK installed and set up.
+
+2. **Install Dependencies**:
+   ```bash
+   flutter pub get
+   ```
+
+3. **Run the Application**:
+   ```bash
+   flutter run
+   ```
+
+## 📸 Screenshots
+
+*(Place your screenshots here)*
+
+| Home Feed | Prompt Details | Login |
+|:---:|:---:|:---:|
+| <img src="assets/images/home_preview.png" width="250" /> | <img src="assets/images/detail_preview.png" width="250" /> | <img src="assets/images/login_preview.png" width="250" /> |
+

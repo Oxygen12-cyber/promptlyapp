@@ -69,8 +69,25 @@ class ApiService {
     if (response.statusCode == 200) {}
   }
 
+  Future<String> getUserwithId(int id) async {
+    final url = Uri.parse('$baseUrl/users/$id');
+
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      final userData = jsonDecode(response.body);
+
+      final parsedData = UserModel.fromJson(userData);
+
+      print('loading getuserid function');
+
+      return parsedData.username;
+    } else {
+      throw 'error: $response.statusCode';
+    }
+  }
+
   // Post functions
-  Future<List<PostModel>> getAllPosts()async{
+  Future<List<PostModel>> getAllPosts() async {
     final url = Uri.parse('$baseUrl/posts');
 
     final response = await http.get(url);
@@ -78,9 +95,10 @@ class ApiService {
     if (response.statusCode == 200) {
       final List<PostModel> data = jsonDecode(response.body);
       return data;
-    } else{
+    } else {
       throw 'error: $response.statusCode';
     }
   }
+
   // Likes functions
 }

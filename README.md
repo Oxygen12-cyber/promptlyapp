@@ -39,9 +39,11 @@ To run this application locally on your machine:
 
 ## 📸 Screenshots
 
-*(Place your screenshots here)*
+<img width="678" height="1000" alt="Screenshot From 2025-12-18 12-31-33" src="https://github.com/user-attachments/assets/1832993d-a818-4759-8089-2bf25cc5c2b5" />
+<img width="814" height="707" alt="Screenshot From 2025-12-24 11-38-30" src="https://github.com/user-attachments/assets/704ad024-9930-4a06-bb91-d412b0e9c64d" />
 
-| Home Feed | Prompt Details | Login |
-|:---:|:---:|:---:|
-| <img src="assets/images/home_preview.png" width="250" /> | <img src="assets/images/detail_preview.png" width="250" /> | <img src="assets/images/login_preview.png" width="250" /> |
+<video src="https://github.com/user-attachments/assets/6df754fe-6def-4231-a720-debf3e73cc79" controls></video>
+
+
+
 
